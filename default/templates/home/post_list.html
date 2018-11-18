@@ -1,0 +1,53 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+    {% block content  %}
+          <!-- Blog Post -->
+          {% for post in posts %}
+          <div class="card mb-4">
+            <img class="card-img-top" src={% static  'images/google.png' %} alt="Card image cap">
+            <div class="card-body">
+              <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+              <p class="card-text">{{ post.text|linebreaksbr }}</p>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              {{ post.published_date }}
+              <a href="#">{{post.author}}</a>
+            </div>
+          </div>
+      {% endfor  %}
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <img class="card-img-top" src={% static  'images/images.png' %} alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">More test </h2>
+              <p class="card-text"> Further testing google blog</p>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+                January 1, 2017 by
+              <a href="#">Wane</a>
+            </div>
+          </div>
+
+          <!-- Blog Post -->
+
+         {% for event in e %}
+          <div class="card mb-4">
+            <img class="card-img-top" src={% static  'images/developers.png' %} alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">{{ post.title }}</h2>
+              <p class="card-text">{{ post.text|linebreaksbr }}</p>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              {{ post.Date }}
+              <a href="#">{{post.announcer}}</a>
+            </div>
+          </div>
+      {% endfor  %}
+ {% endblock %}  
+         
