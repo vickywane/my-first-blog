@@ -22,6 +22,8 @@
 
   <body>
 
+
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -58,16 +60,25 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-          <h1 class="my-4"> Google Events  <br> 
-            <small>This event blog ws built during the Google Code In challenge as one of the tasks   </small>
+          <h1 class="my-4"> Google Events  <br>
+            <small>This event blog was built by Wane Nwani during the Google Code In challenge as one of the tasks   </small>
           </h1>
+
+        {% if user.is_authenticated   %}
+           <div>
+            <a href="{% url 'post_new' %}" class="top-menu"> Report an event <span class="glyphicon glyphicon-plus"></span></a>
+           </div> 
+          {% endif %}
 
           <!-- Blog Post -->
          {% block content %}
 
 
-         {% endblock %} 
+         {% endblock %}
           <!-- Pagination -->
+
+
+
           <ul class="pagination justify-content-center mb-4">
             <li class="page-item">
               <a class="page-link" href="#">&larr; Older</a>
@@ -103,27 +114,22 @@
                 <div class="col-lg-6">
                   <ul class="list-unstyled mb-0">
                     <li>
-                      <a href="#">Web Design</a>
+                      <a href="#">Softwares</a>
                     </li>
                     <li>
-                      <a href="#">HTML</a>
+                      <a href="#">Summit</a>
                     </li>
                     <li>
-                      <a href="#">Freebies</a>
+                      <a href="#">Conferences</a>
                     </li>
                   </ul>
                 </div>
                 <div class="col-lg-6">
                   <ul class="list-unstyled mb-0">
                     <li>
-                      <a href="#">JavaScript</a>
+                      <a href="#">Expo</a>
                     </li>
-                    <li>
-                      <a href="#">CSS</a>
-                    </li>
-                    <li>
-                      <a href="#">Tutorials</a>
-                    </li>
+
                   </ul>
                 </div>
               </div>
@@ -134,7 +140,7 @@
           <div class="card my-4">
             <h5 class="card-header">Side Widget</h5>
             <div class="card-body">
-              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+              Coming Soon
             </div>
           </div>
 
@@ -149,14 +155,14 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; iamnwani 2018</p>
       </div>
       <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
   </body>
 

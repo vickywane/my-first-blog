@@ -8,7 +8,7 @@
           <div class="card mb-4">
             <img class="card-img-top" src={% static  'images/google.png' %} alt="Card image cap">
             <div class="card-body">
-              <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+              <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> 
               <p class="card-text">{{ post.text|linebreaksbr }}</p>
               <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
@@ -35,19 +35,18 @@
 
           <!-- Blog Post -->
 
-         {% for event in e %}
           <div class="card mb-4">
             <img class="card-img-top" src={% static  'images/developers.png' %} alt="Card image cap">
             <div class="card-body">
-              <h2 class="card-title">{{ post.title }}</h2>
-              <p class="card-text">{{ post.text|linebreaksbr }}</p>
+              <h2 class="card-title"> Upcoming Challenge</h2>
+              <p class="card-text"> Upcoming Google challenge <br> More updates coming soon</p>
               <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-              {{ post.Date }}
-              <a href="#">{{post.announcer}}</a>
+              January 1, 2017
+              <a href="#">WaneNwani</a>
             </div>
           </div>
-      {% endfor  %}
+      
  {% endblock %}  
          
